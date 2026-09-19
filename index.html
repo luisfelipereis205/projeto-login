@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    <form action="" method="post"> <!-- o method="post" é normalmente usado para envio de credenciais, em vez de colocar a senha diretamente na URL como aconteceria com GET.-->
+        <h2>Área de Login</h2>
+
+        <label for="inlogin">Login</label> <!-- O for do label deve ser igual ao id do input-->
+        <input type="email" id="inLogin" name="login" required>
+
+        <label for="insenha">Senha</label>
+        <input type="password" id="insenha" name="senha" required>
+
+        <input type="submit" value="Entrar">
+    </form>
+
+    <p><a href="#">Cadastre-se</a></p>
+    <p><a href="#">Esqueceu a senha?</a></p>
+</body>
+</html>
