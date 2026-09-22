@@ -6,24 +6,41 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="/cadastro" method="post">
         
         <h2>Crie sua conta</h2>
         <p>É rápido e leva apenas alguns segundos.</p>
 
-        <label for="inName">Nome Completo</label>
-        <input type="text" id="inName" name="nome" placeholder="Digite seu nome completo" required>
+        <label for="nome">Nome Completo</label>
+        <input 
+        type="text" 
+        id="nome" 
+        name="nome" 
+        placeholder="Digite seu nome completo" 
+        required>
 
-        <label for="newEmail">E-mail</label>
-        <input type="email" id="newEmail"  name="novoEmail" placeholder="Digite seu melhor e-mail" required>
+        <label for="email">E-mail</label>
+        <input 
+            type="email" 
+            id="email"  
+            name="email" 
+            placeholder="Digite seu melhor e-mail" required>
 
-        <label for="newSenha">Senha</label>
-        <input type="password" id="newSenha" name="novaSenha" placeholder="Crie uma senha forte" required>
+        <label for="senha">Senha</label>
+        <input 
+            type="password" 
+            id="senha" 
+            name="senha" 
+            placeholder="Crie uma senha forte" required>
 
-        <label for="confirma">Confirme sua senha</label>
-        <input type="password" id="confirma" name="confirmaSenha"  placeholder="Digite sua senha novamente" required>
+        <label for="confirmaSenha">Confirme sua senha</label>
+        <input 
+            type="password" 
+            id="confirmaSenha" 
+            name="confirmaSenha"  
+            placeholder="Digite sua senha novamente" required>
 
-        <button class="btn-cadastrar" id="cadastrar">Finalizar cadastro</button>
+        <button type="submit" class="btn-cadastrar" >Finalizar cadastro</button>
 
         <p><a href="index.html">Já possui uma conta? Entre agora.</a></p>
 
