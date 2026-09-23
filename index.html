@@ -7,19 +7,25 @@
 </head>
 <body>
 
-    <form action="/login" method="post"> <!-- o method="post" é normalmente usado para envio de credenciais, em vez de colocar a senha diretamente na URL como aconteceria com GET.-->
-        <h2>Área de Login</h2>
+    <form action="/login" method="post" class="form-login"> <!-- o method="post" é normalmente usado para envio de credenciais, em vez de colocar a senha diretamente na URL como aconteceria com GET.-->
+        <h2 class="titulo-form">Área de Login</h2>
 
-        <label for="login">E-mail</label> <!-- O for do label deve ser igual ao id do input-->
-        <input type="email" id="login" name="login" required>
+        <div class="campo">
+            <label for="login">E-mail</label> <!-- O for do label deve ser igual ao id do input-->
+            <input type="email" id="login" name="login" required>
+        </div>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required>
+        <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+        </div>
 
-        <input type="submit" value="Entrar">
+        <button type="submit" class="btn">Entrar</button>
     </form>
 
-    <p><a href="cadastro.html">Cadastre-se</a></p>
-    <p><a href="#">Esqueceu a senha?</a></p>
+    <div class="links">
+        <p><a href="cadastro.html">Cadastre-se</a></p>
+        <p><a href="#">Esqueceu a senha?</a></p>
+    </div>
 </body>
 </html>

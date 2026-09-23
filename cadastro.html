@@ -8,41 +8,51 @@
 <body>
     <form action="/cadastro" method="post">
         
-        <h2>Crie sua conta</h2>
-        <p>É rápido e leva apenas alguns segundos.</p>
+        <h2 class="titulo-form">Crie sua conta</h2>
+        <p class="descricao-form">É rápido e leva apenas alguns segundos.</p>
 
-        <label for="nome">Nome Completo</label>
-        <input 
-        type="text" 
-        id="nome" 
-        name="nome" 
-        placeholder="Digite seu nome completo" 
-        required>
+        <div class="campo">
+            <label for="nome">Nome Completo</label>
+            <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome completo"
+            required>
+        </div>
 
-        <label for="email">E-mail</label>
-        <input 
-            type="email" 
-            id="email"  
-            name="email" 
+        <div class="campo">
+            <label for="email">E-mail</label>
+            <input 
+                type="email" 
+                id="email"  
+                name="email" 
             placeholder="Digite seu melhor e-mail" required>
+        </div>
 
-        <label for="senha">Senha</label>
-        <input 
-            type="password" 
-            id="senha" 
-            name="senha" 
-            placeholder="Crie uma senha forte" required>
+        <div class="campo">
+            <label for="senha">Senha</label>
+            <input 
+                type="password" 
+                id="senha" 
+                name="senha" 
+                placeholder="Crie uma senha forte" required>
+            </div>
 
-        <label for="confirmaSenha">Confirme sua senha</label>
-        <input 
-            type="password" 
-            id="confirmaSenha" 
-            name="confirmaSenha"  
-            placeholder="Digite sua senha novamente" required>
+        <div class="campo">
+            <label for="confirmaSenha">Confirme sua senha</label>
+            <input 
+                type="password" 
+                id="confirmaSenha" 
+                name="confirmaSenha"  
+                placeholder="Digite sua senha novamente" required>
+        </div>
 
         <button type="submit" class="btn-cadastrar" >Finalizar cadastro</button>
 
-        <p><a href="index.html">Já possui uma conta? Entre agora.</a></p>
+        <div class="links">
+            <p><a href="index.html">Já possui uma conta? Entre agora.</a></p>
+        </div>
 
     </form>
 </body>
