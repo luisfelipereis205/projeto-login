@@ -1,31 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/index.css" />
     <title>Login</title>
-</head>
-<body>
-
-    <form action="/login" method="post" class="form-login"> <!-- o method="post" é normalmente usado para envio de credenciais, em vez de colocar a senha diretamente na URL como aconteceria com GET.-->
-        <h2 class="titulo-form">Área de Login</h2>
-
-        <div class="campo">
-            <label for="login">E-mail</label> <!-- O for do label deve ser igual ao id do input-->
-            <input type="email" id="login" name="login" required>
-        </div>
-
-        <div class="campo">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required>
-        </div>
-
-        <button type="submit" class="btn">Entrar</button>
+  </head>
+  <body>
+    <form action="/login" method="post" class="form-login">
+      <!-- o method="post" é normalmente usado para envio de credenciais, em vez de colocar a senha diretamente na URL como aconteceria com GET.-->
+      <div class="form-container">
+          <h2 class="titulo-form">Área de <spam>Login</spam></h2>
+          <div class="campo">
+            <!-- O for do label deve ser igual ao id do input-->
+            <input type="email" id="login" name="login" placeholder="E-mail" required />
+          </div>
+          <div class="campo">
+            <input type="password" id="senha" name="senha" placeholder="Senha" required />
+          </div>
+          <button type="submit" class="btn">Entrar</button>
+          <div class="links">
+              <p><a href="#">Esqueceu a senha?</a></p>
+            <p><a href="cadastro.html">Cadastre-se</a></p>
+          </div>
+      </div>
     </form>
-
-    <div class="links">
-        <p><a href="cadastro.html">Cadastre-se</a></p>
-        <p><a href="#">Esqueceu a senha?</a></p>
-    </div>
-</body>
+  </body>
 </html>
