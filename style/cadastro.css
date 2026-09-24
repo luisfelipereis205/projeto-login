@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Krona+One&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DynaPuff:wght@400..700&family=Krona+One&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+:root {
+    /* Cores do site */
+    --cor-principal: #000000e5;
+    --cor-login: #FFFFFF;
+    --laranja-vermelho: #FF5500;
+    --links-rodape: #2C4482;
+
+    /* fontes */
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-secundaria: 'Archivo Black', sans-serif;
+    --fonte-terciaria: "Krona One", sans-serif;
+}
+
+body {
+    background: url(/img/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+div.form-container {
+    background: rgba(255, 255, 255, 0.379);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.223);
+    border-radius: 15px;
+    padding: 4rem;
+}
+
+form h2 {
+    color: var(--cor-principal);
+    font-size: 2rem;
+    margin-bottom: 1.7rem;
+    font-family: var(--fonte-secundaria);
+    text-align: center;
+}
+
+h2 spam {
+    color: var(--laranja-vermelho);
+    font-family: var(--fonte-secundaria);
+}
+
+p.descricao-form {
+    color: var(--cor-principal);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-family: var(--fonte-terciaria);
+}
+
+div.campo { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+}
+
+div.campo input {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid var(--cor-principal);
+    background-color: transparent;
+}
+
+div.campo input:focus {
+    outline: none;
+    border-color: var(--laranja-vermelho);
+}
+
+div.campo input::placeholder {
+    text-transform: uppercase;
+    color: var(--cor-principal);
+    font-size: medium;
+    font-weight: 590;
+    font-family: var(--fonte-terciaria);
+}
+
+button {
+    background-color: var(--laranja-vermelho);
+    color: var(--cor-login);
+    font-family: var(--fonte-secundaria);
+    border: none;
+    border-radius: 0.7rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #e75b15;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.links a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    border-bottom: 1px solid var(--cor-principal);
+    font-family: var(--fonte-terciaria);
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: var(--laranja-vermelho);
+    border-bottom: 1px solid var(--laranja-vermelho);
+}
