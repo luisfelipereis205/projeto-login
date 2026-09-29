@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Krona+One&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DynaPuff:wght@400..700&family=Krona+One&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+:root {
+    /* Cores do site */
+    --cor-principal: #000000e5;
+    --cor-login: #FFFFFF;
+    --laranja-vermelho: #FF5500;
+    --links-rodape: #2C4482;
+
+    /* fontes */
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-secundaria: 'Archivo Black', sans-serif;
+    --fonte-terciaria: "Krona One", sans-serif;
+}
+
+body {
+    background: url(/img/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+div.box-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+div.content-welcome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.379);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.223);
+    border-radius: 15px;
+    padding: 4rem;
+    text-align: center;
+}
+
+div.description {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    align-items: center;
+}
+
+div.content-welcome h1 {
+    color: var(--cor-principal);
+    font-size: 2rem;
+    margin-bottom: 1.7rem;
+    font-family: var(--fonte-terciaria);
+    text-align: center;
+}
+
+div.content-welcome p {
+    color: var(--cor-principal);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: var(--fonte-terciaria);
+    text-align: center;
+}
+
+div.circle {
+    order: 1;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 40%;
+    overflow: hidden;
+    /* background: linear-gradient( #ADEBDC, 50%, #FEC5CE); */
+    background: linear-gradient(90deg, #fec5ce 50%, #adebdc  50%);
+}
+
+div.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.content-welcome button {
+    order: 3;
+    background-color: var(--laranja-vermelho);
+    color: var(--cor-login);
+    font-family: var(--fonte-secundaria);
+    border: none;
+    border-radius: 0.7rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20%;
+    text-transform: uppercase;
+}
