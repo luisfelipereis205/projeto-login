@@ -8,7 +8,7 @@ const path = require('path') /* Montar e manipular caminhos de arquivos/pastas .
 Ele evita que você precise escrever o caminho completo do arquivo manualmente.*/
 
 const app = express(); // Aqui a função é chamada para criar uma instância do servidor web usando o Express. A variável app representa o servidor e é nele que vamos usar para definir rotas, middlewares e outras configurações.
-const PORT = 3000; // Aqui definimos a porta em que o servidor vai rodar. A porta é como uma "porta de entrada" para o servidor, permitindo que ele receba requisições HTTP. Essa variável define o número da porta que você pretende utilizar para o servidor.
+const PORT = process.env.PORT || 3000; // Aqui definimos a porta em que o servidor vai rodar. A porta é como uma "porta de entrada" para o servidor, permitindo que ele receba requisições HTTP. Essa variável define o número da porta que você pretende utilizar para o servidor. Colocamos o valor da variável de ambiente PORT, caso exista, ou então usamos a porta 3000 como padrão. Isso é útil para quando você for hospedar o servidor em algum serviço que define a porta automaticamente.
 
 
 // Configurações simples
