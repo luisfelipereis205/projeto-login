@@ -10,20 +10,70 @@
     <form action="/login" method="post" class="form-login">
       <!-- o method="post" é normalmente usado para envio de credenciais, em vez de colocar a senha diretamente na URL como aconteceria com GET.-->
       <div class="form-container">
-          <h2 class="titulo-form">Área de <spam>Login</spam></h2>
-          <div class="campo">
-            <!-- O for do label deve ser igual ao id do input-->
-            <input type="email" id="login" name="login" placeholder="E-mail" required />
-          </div>
-          <div class="campo">
-            <input type="password" id="senha" name="senha" placeholder="Senha" required />
-          </div>
-          <button type="submit" class="btn">Entrar</button>
-          <div class="links">
-              <p><a href="#">Esqueceu a senha?</a></p>
-            <p><a href="cadastro.html">Cadastre-se</a></p>
-          </div>
+        <h2 class="titulo-form">Área de <spam>Login</spam></h2>
+        <div class="campo">
+          <!-- O for do label deve ser igual ao id do input-->
+          <input
+            type="email"
+            id="email"
+            name="login"
+            placeholder="E-mail"
+            required
+          />
+        </div>
+        <div class="campo">
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+            required
+          />
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+        <div class="links">
+          <p><a href="#">Esqueceu a senha?</a></p>
+          <p><a href="cadastro.html">Cadastre-se</a></p>
+        </div>
       </div>
     </form>
+    <script>
+      // Exemplo de código para o login.js
+      const formLogin = document.querySelector("form");
+
+      if (formLogin) {
+        formLogin.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const senha = document.getElementById("senha").value;
+
+          try {
+            const resposta = await fetch("http://localhost:3000/api/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, senha }),
+            });
+
+            const resultado = await resposta.json();
+
+            if (resposta.ok) {
+              // Salvamos o nome do usuário no navegador (LocalStorage) para usar no Dashboard
+              localStorage.setItem("usuarioLogado", resultado.nome);
+
+              alert(resultado.mensagem);
+              window.location.href = "dashboard.html"; // Vai para a página de boas-vindas!
+            } else {
+              alert(resultado.erro); // "E-mail ou senha incorretos!"
+            }
+          } catch (erro) {
+            console.error("Erro ao conectar com o servidor:", erro);
+            alert("Não foi possível conectar ao servidor.");
+          }
+        });
+      }
+    </script>
   </body>
 </html>

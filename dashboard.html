@@ -1,22 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/dashboard.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/dashboard.css" />
     <title>Bem-Vindo</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="box-welcome">
-        <div class="content-welcome">
-            <div class="circle"> <img src="img/avatar.png" alt=""></div>
-            <div class="description">
-                <h1>Bem-Vindo</h1>
-                <p>Olá, seja bem-vindo ao nosso sistema!</p>
-                <button href="index.html">Sair</button>
-            </div>
-
+      <div class="content-welcome">
+        <div class="circle"><img src="img/avatar.png" alt="" /></div>
+        <div class="description">
+          <h1>Bem-Vindo, <span id="nome-usuario" class="nome-usuario">Usuário</span></h1>
+          <p>Olá, seja bem-vindo ao nosso sistema!</p>
+          <button id="btn-sair">Sair</button>
         </div>
+      </div>
     </div>
-</body>
+    <script>
+      // Exemplo de código para o dashboard.js
+      document.addEventListener("DOMContentLoaded", () => {
+        // Pega o nome salvo no navegador
+        const nomeUsuario = localStorage.getItem("usuarioLogado");
+
+        // Se não houver usuário logado, manda de volta para o login por segurança!
+        if (!nomeUsuario) {
+          alert("Você precisa fazer login primeiro!");
+          window.location.href = "index.html";
+          return;
+        }
+
+        // Exibe o nome na tela (supondo que você criou um elemento com id "nome-usuario" ou similar)
+        const spanNome = document.getElementById("nome-usuario");
+        if (spanNome) {
+          spanNome.textContent = nomeUsuario;
+        }
+
+        // Programando o Botão de Sair
+        const btnSair = document.getElementById("btn-sair");
+        if (btnSair) {
+          btnSair.addEventListener("click", () => {
+            localStorage.removeItem("usuarioLogado"); // Limpa os dados da sessão
+            window.location.href = "index.html"; // Volta para o login
+          });
+        }
+      });
+    </script>
+  </body>
 </html>

@@ -1,52 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/cadastro.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/cadastro.css" />
     <title>Cadastro</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="/cadastro" method="post">
-        
-        <div class="form-container">
-            <h2>Crie sua <spam>conta</spam></h2>
-            <p class="descricao-form">É rápido e leva apenas alguns segundos.</p>
-            <div class="campo">
-                <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome completo"
-                required>
-            </div>
-            <div class="campo">
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                placeholder="Digite seu melhor e-mail" required>
-            </div>
-            <div class="campo">
-                <input
-                    type="password"
-                    id="senha"
-                    name="senha"
-                    placeholder="Crie uma senha forte" required>
-                </div>
-            <div class="campo">
-                <input
-                    type="password"
-                    id="confirmaSenha"
-                    name="confirmaSenha"
-                    placeholder="Digite sua senha novamente" required>
-            </div>
-            <button type="submit" class="btn-cadastrar">Finalizar cadastro</button>
-            <div class="links">
-                <p><a href="index.html">Já possui uma conta? Entre agora.</a></p>
-            </div>
+      <div class="form-container">
+        <h2>Crie sua <spam>conta</spam></h2>
+        <p class="descricao-form">É rápido e leva apenas alguns segundos.</p>
+        <div class="campo">
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome"
+            required
+          />
         </div>
-
+        <div class="campo">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu melhor e-mail"
+            required
+          />
+        </div>
+        <div class="campo">
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Crie uma senha forte"
+            required
+          />
+        </div>
+        <div class="campo">
+          <input
+            type="password"
+            id="confirmaSenha"
+            name="confirmaSenha"
+            placeholder="Digite sua senha novamente"
+            required
+          />
+        </div>
+        <button type="submit" class="btn-cadastrar">Finalizar cadastro</button>
+        <div class="links">
+          <p><a href="index.html">Já possui uma conta? Entre agora.</a></p>
+        </div>
+      </div>
     </form>
-</body>
+
+    <script>
+      // Exemplo de código para colocar no seu cadastro.js (ou script da página)
+      const formCadastro = document.querySelector("form"); // Seleciona o formulário de cadastro
+
+      if (formCadastro) {
+        formCadastro.addEventListener("submit", async (e) => {
+          e.preventDefault(); // Evita que a página recarregue sozinha
+
+          // Pega os valores dos inputs 
+          const nome = document.getElementById("nome").value;
+          const email = document.getElementById("email").value;
+          const senha = document.getElementById("senha").value;
+
+          try {
+            // Faz a requisição para o servidor Node.js que criamos
+            const resposta = await fetch("http://localhost:3000/api/cadastro", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ nome, email, senha }),
+            });
+
+            const resultado = await resposta.json();
+
+            if (resposta.ok) {
+              alert(resultado.mensagem); // "Usuário cadastrado com sucesso!"
+              window.location.href = "index.html"; // Redireciona para o Login
+            } else {
+              alert(resultado.erro); // Exibe o erro caso o e-mail já exista
+            }
+          } catch (erro) {
+            console.error("Erro ao conectar com o servidor:", erro);
+            alert("Não foi possível conectar ao servidor.");
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

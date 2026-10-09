@@ -65,6 +65,11 @@ div.content-welcome h1 {
     text-align: center;
 }
 
+div.description span.nome-usuario {
+    color: var(--laranja-vermelho);
+    font-family: var(--fonte-terciaria);
+}
+
 div.content-welcome p {
     color: var(--cor-principal);
     font-size: 1.2rem;
