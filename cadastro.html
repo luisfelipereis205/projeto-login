@@ -69,7 +69,7 @@
 
           try {
             // Faz a requisição para o servidor Node.js que criamos
-            const resposta = await fetch("http://localhost:3000/api/cadastro", {
+            const resposta = await fetch("/api/cadastro", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
