@@ -91,5 +91,5 @@ app.post('/api/login', (req, res) => {
 
 // Inicia o servidor na porta 3000
 app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
